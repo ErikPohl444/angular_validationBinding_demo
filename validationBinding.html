@@ -1,9 +1,8 @@
-
 <div ng-app="validationBinding" ng-controller="usersController">
     <form name="myForm">
       <input type="text" name="userName" ng-model="editedUser.name" required/>
       <span class="error" ng-show="myForm.userName.$error.required">Required!</span>
-      <button ng-click="save(editedUser)">
+      <button ng-click="save(editedUser)" ng-hide="myForm.userName.$error.required">
       Save
       </button>
       <ul>
