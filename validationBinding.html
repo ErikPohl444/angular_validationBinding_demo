@@ -1,11 +1,15 @@
+
 <div ng-app="validationBinding" ng-controller="usersController">
-    <input type="text" ng-model="editedUser.name" />
-    <button ng-click="save(editedUser)">
-    Save
-    </button>
-    <ul>
-      <li ng-repeat="u in users">
-        <a href="#" ng-click="edit(u)">{{u.name}}</a>
-      </li>
-    </ul>
+    <form name="myForm">
+      <input type="text" name="userName" ng-model="editedUser.name" required/>
+      <span class="error" ng-show="myForm.userName.$error.required">Required!</span>
+      <button ng-click="save(editedUser)">
+      Save
+      </button>
+      <ul>
+        <li ng-repeat="u in users">
+          <a href="#" ng-click="edit(u)">{{u.name}}</a>
+        </li>
+      </ul>
+  </form>
 </div>
