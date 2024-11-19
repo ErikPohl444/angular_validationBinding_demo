@@ -5,4 +5,8 @@ app.controller("usersController", function($scope, $http) {
   .success(function(result) {
   	$scope.users = result;
   });
+  
+  $scope.edit = function(u) {
+  	$scope.currentUser = u;
+  };
 });
