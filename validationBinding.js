@@ -6,14 +6,16 @@ app.controller("usersController", function($scope, $http) {
   	$scope.users = result;
   });
   
-  $scope.editedUser = {name:""};
+  $scope.editedUser = undefined;
   
   $scope.save = function(u) {
   	$scope.currentUser.name = u.name;
+    $scope.editedUser = undefined
   }
   
   $scope.edit = function(u) {
   	$scope.currentUser = u;
+    $scope.editedUser = {name: ""}
     $scope.editedUser.name = u.name;
   };
 });
